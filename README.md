@@ -4,6 +4,9 @@
   - [Introduction](#introduction)
   - [Continous Integration](#continous-integration)
   - [Levels of Testing](#levels-of-testing)
+  - [Continous Delivery](#continous-delivery)
+    - [Environmnets](#environmnets)
+    - [Code Promotion](#code-promotion)
 - [Tips](#tips)
   - [Execution from container](#execution-from-container)
   - [Git pager configuration](#git-pager-configuration)
@@ -31,6 +34,28 @@ Automated tests are essential to CI.
 - Syntax testing and linting
 - Unit and integration testing
 - Acceptance testing
+
+
+## Continous Delivery
+
+### Environmnets
+
+- Standalone hardware and software stack
+- Capable of running your entire application
+- Configured for a specific puspose:
+  - Dev - (One environment per developer, easily to repaiar or replace, lower resources requirements)
+  - QA - (Shared environment, intended for testing, automated test, similar to prod but not identical)
+  - Staging - (Clone of production, only change as part of prod release, test in prod without releasing to prod)
+  - Prod - (Customer facing servers, part of CD pipeline, automated tests, siple to roll out and back)
+
+### Code Promotion
+
+- Feature branches developed in development and tested in QA
+- Long-running development branch
+- Development branch is tested in QA
+- Release is "cut" and pushed to staging
+- Release is tagged and pushed to production
+
 
 # Tips
 
